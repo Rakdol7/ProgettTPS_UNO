@@ -1,0 +1,16 @@
+C:\Users\masnada.21197\Desktop\ProgettoTPS\ProgettoTPS\obj\Debug\net6.0-windows\ProgettoTPS.csproj.GenerateResource.cache
+C:\Users\masnada.21197\Desktop\ProgettoTPS\ProgettoTPS\obj\Debug\net6.0-windows\ProgettoTPS.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\masnada.21197\Desktop\ProgettoTPS\ProgettoTPS\obj\Debug\net6.0-windows\ProgettoTPS.AssemblyInfoInputs.cache
+C:\Users\masnada.21197\Desktop\ProgettoTPS\ProgettoTPS\obj\Debug\net6.0-windows\ProgettoTPS.AssemblyInfo.cs
+C:\Users\masnada.21197\Desktop\ProgettoTPS\ProgettoTPS\obj\Debug\net6.0-windows\ProgettoTPS.csproj.CoreCompileInputs.cache
+C:\Users\masnada.21197\Desktop\ProgettoTPS\ProgettoTPS\bin\Debug\net6.0-windows\ProgettoTPS.exe
+C:\Users\masnada.21197\Desktop\ProgettoTPS\ProgettoTPS\bin\Debug\net6.0-windows\ProgettoTPS.deps.json
+C:\Users\masnada.21197\Desktop\ProgettoTPS\ProgettoTPS\bin\Debug\net6.0-windows\ProgettoTPS.runtimeconfig.json
+C:\Users\masnada.21197\Desktop\ProgettoTPS\ProgettoTPS\bin\Debug\net6.0-windows\ProgettoTPS.dll
+C:\Users\masnada.21197\Desktop\ProgettoTPS\ProgettoTPS\bin\Debug\net6.0-windows\ProgettoTPS.pdb
+C:\Users\masnada.21197\Desktop\ProgettoTPS\ProgettoTPS\obj\Debug\net6.0-windows\ProgettoTPS.Form1.resources
+C:\Users\masnada.21197\Desktop\ProgettoTPS\ProgettoTPS\obj\Debug\net6.0-windows\ProgettoTPS.dll
+C:\Users\masnada.21197\Desktop\ProgettoTPS\ProgettoTPS\obj\Debug\net6.0-windows\refint\ProgettoTPS.dll
+C:\Users\masnada.21197\Desktop\ProgettoTPS\ProgettoTPS\obj\Debug\net6.0-windows\ProgettoTPS.pdb
+C:\Users\masnada.21197\Desktop\ProgettoTPS\ProgettoTPS\obj\Debug\net6.0-windows\ProgettoTPS.genruntimeconfig.cache
+C:\Users\masnada.21197\Desktop\ProgettoTPS\ProgettoTPS\obj\Debug\net6.0-windows\ref\ProgettoTPS.dll
