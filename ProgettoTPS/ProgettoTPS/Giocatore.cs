@@ -49,9 +49,10 @@ namespace ProgettoTPS
             return mano.FirstOrDefault(c => c.IsGiocabile(cartaCorrente));
         }
 
-        public void GiocaCarta(Carta carta)
+        public void GiocaCarta(int index)
         {
-            mano.Remove(carta);
+            mano.RemoveAt(index);
         }
+       
     }
 }

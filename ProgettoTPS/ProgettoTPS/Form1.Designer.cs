@@ -147,6 +147,7 @@
             FineG1.Text = "FINE TURNO";
             FineG1.UseVisualStyleBackColor = true;
             FineG1.Visible = false;
+            FineG1.Click += FineG1_Click;
             // 
             // FineG2
             // 
@@ -157,6 +158,7 @@
             FineG2.Text = "FINE TURNO";
             FineG2.UseVisualStyleBackColor = true;
             FineG2.Visible = false;
+            FineG2.Click += FineG2_Click;
             // 
             // CartaTav
             // 

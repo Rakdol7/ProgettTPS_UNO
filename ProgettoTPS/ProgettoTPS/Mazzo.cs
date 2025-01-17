@@ -23,7 +23,7 @@ namespace ProgettoTPS
                 }
             }
         }
-
+        
         public void Mescola()
         {
             var rnd = new Random();

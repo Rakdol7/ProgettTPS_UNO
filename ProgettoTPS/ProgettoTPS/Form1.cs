@@ -36,35 +36,27 @@ namespace ProgettoTPS
                 giocatori[i] = new Giocatore($"Giocatore {i + 1}");
             }
         }
-
-        //--------------------------------------------------------------------------------------------------------------
-
         private void Turno(int indiceGiocatore)
         {
             while (giocoInCorso)
             {
                 if (indiceGiocatoreCorrente == indiceGiocatore)
                 {
-                    var giocatore = giocatori[indiceGiocatore];
-                    var cartaGiocabile = giocatore.ScegliCarta(tavolo.CartaCorrente);
-
-                    if (cartaGiocabile != null)
+                    Invoke(new Action(() =>
                     {
-                        tavolo.AggiornaCarta(cartaGiocabile);
-                        pilascarti.AggiungiCarta(cartaGiocabile);
-                        giocatore.GiocaCarta(cartaGiocabile);
-                    }
-                    else
+                        AggiornaInterfacciaGiocatore(indiceGiocatore);
+                        label2.Text = $"GIOCATORE {indiceGiocatore + 1}";
+                    }));
+
+                    while (indiceGiocatoreCorrente == indiceGiocatore)
                     {
-                        giocatore.Pesca(mazzo);
+                        Thread.Sleep(100);
                     }
-
-                    ControllaMazzo();
-
-                    indiceGiocatoreCorrente = (indiceGiocatoreCorrente + 1) % giocatori.Length;
                 }
-
-                Thread.Sleep(100);
+                else
+                {
+                    Thread.Sleep(100);
+                }
             }
         }
 
@@ -75,8 +67,6 @@ namespace ProgettoTPS
                 mazzo.RiempiDallaPilascarti(pilascarti);
             }
         }
-
-        //--------------------------------------------------------------------------------------------------------------
 
         private void IniziaGioco_Click(object sender, EventArgs e)
         {
@@ -114,10 +104,12 @@ namespace ProgettoTPS
             {
                 int indiceGiocatore = i;
                 giocatoreThreads[i] = new Thread(() => Turno(indiceGiocatore));
+                giocatoreThreads[i].IsBackground = true;
                 giocatoreThreads[i].Start();
             }
 
             AggiornaPrimaMano();
+            ModCarta(tavolo.CartaCorrente);
 
         }
         private void AggiornaPrimaMano()
@@ -133,74 +125,124 @@ namespace ProgettoTPS
             {
                 ManoG2.Items.Add($"{carta.Colore} {carta.Numero}");
             }
-            //label2.Text = Convert.ToString(giocatori[1].Mano.Count);
         }
 
         private void GiocaG1_Click(object sender, EventArgs e)
         {
+            int indice = ManoG1.SelectedIndex;
 
+            if (giocatori[0].Mano[indice].Colore == tavolo.CartaCorrente.Colore || giocatori[0].Mano[indice].Numero == tavolo.CartaCorrente.Numero)
+            {
+                ModCarta(giocatori[0].Mano[indice]);
+                tavolo.AggiornaCarta(giocatori[0].Mano[indice]);
+                pilascarti.AggiungiCarta(giocatori[0].Mano[indice]);
+                giocatori[0].GiocaCarta(indice);
+                ManoG1.Items.Remove(ManoG1.SelectedItem);
+                indiceGiocatoreCorrente = 1;
+            }
+            else
+            {
+                MessageBox.Show("LA CARTA NON E' GIOCABILE");
+            }
+            if (giocatori[0].Mano.Count == 0)
+            {
+                giocoInCorso = false;
+                MessageBox.Show("IL GIOCATORE 1 HA VINTO");
+            }
         }
 
         private void PescaG1_Click(object sender, EventArgs e)
         {
-            /*var nuovaCarta = mazzo.Pesca(); // Pesca una carta dal mazzo
-
-            if (nuovaCarta != null) // Verifica che ci siano carte nel mazzo
-            {
-                giocatori[0].Mano.Add(nuovaCarta); // Aggiunge la carta pescata alla mano del giocatore
-
-                // Aggiorna graficamente la mano del giocatore 1
-                AggiornaManoGiocatore(0, ManoG1);
-            }
-            else
-            {
-                MessageBox.Show("Il mazzo è vuoto, non puoi pescare altre carte!", "Mazzo Vuoto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            label2.Text= Convert.ToString(giocatori[1].Mano.Count);*/
-
             Carta c = mazzo.Pesca();
             ManoG1.Items.Add($"{c.Colore} {c.Numero}");
             giocatori[0].PescaCarta(c);
-
+            ControllaMazzo();
+            PescaG1.Visible = false;
         }
 
         private void GiocaG2_Click(object sender, EventArgs e)
         {
+            int indice = ManoG2.SelectedIndex;
 
+            if (giocatori[1].Mano[indice].Colore == tavolo.CartaCorrente.Colore || giocatori[1].Mano[indice].Numero == tavolo.CartaCorrente.Numero)
+            {
+                ModCarta(giocatori[1].Mano[indice]);
+                tavolo.AggiornaCarta(giocatori[1].Mano[indice]);
+                pilascarti.AggiungiCarta(giocatori[1].Mano[indice]);
+                giocatori[1].GiocaCarta(indice);
+                ManoG2.Items.Remove(ManoG2.SelectedItem);
+                indiceGiocatoreCorrente = 0;
+            }
+            else
+            {
+                MessageBox.Show("LA CARTA NON E' GIOCABILE");
+            }
+            if (giocatori[1].Mano.Count == 0)
+            {
+                giocoInCorso = false;
+                MessageBox.Show("IL GIOCATORE 2 HA VINTO");
+            }
         }
 
         private void PescaG2_Click(object sender, EventArgs e)
         {
-            /*var nuovaCarta = mazzo.Pesca(); // Pesca una carta dal mazzo
-
-            if (nuovaCarta != null) // Verifica che ci siano carte nel mazzo
-            {
-                giocatori[1].Mano.Add(nuovaCarta); // Aggiunge la carta pescata alla mano del giocatore
-
-                // Aggiorna graficamente la mano del giocatore 1
-                AggiornaManoGiocatore(1, ManoG2);
-            }
-            else
-            {
-                MessageBox.Show("Il mazzo è vuoto, non puoi pescare altre carte!", "Mazzo Vuoto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            label2.Text = Convert.ToString(giocatori[1].Mano.Count);*/
-
             Carta c = mazzo.Pesca();
             ManoG2.Items.Add($"{c.Colore} {c.Numero}");
             giocatori[1].PescaCarta(c);
+            ControllaMazzo();
+            PescaG2.Visible = false;
         }
-        
-        /*private void AggiornaManoGiocatore(int indexGiocatore, ListBox listBoxMano)
-        {
-            listBoxMano.Items.Clear(); // Svuota la ListBox
-            foreach (var carta in giocatori[indexGiocatore].Mano)
-            {
-                listBoxMano.Items.Add($"{carta.Colore} {carta.Numero}"); // Aggiunge le carte alla ListBox
-            }
-        }*/
 
+        private void ModCarta(Carta c)
+        {
+            CartaTav.Text = Convert.ToString(c.Numero);
+            if (c.Colore == "Rosso")
+            {
+                CartaTav.BackColor = Color.Red;
+            }
+            else if (c.Colore == "Giallo")
+            {
+                CartaTav.BackColor = Color.Yellow;
+            }
+            else if (c.Colore == "Blu")
+            {
+                CartaTav.BackColor = Color.Blue;
+
+            }
+            else if (c.Colore == "Verde")
+            {
+                CartaTav.BackColor = Color.Green;
+
+            }
+        }
+
+        private void FineG1_Click(object sender, EventArgs e)
+        {
+            if (indiceGiocatoreCorrente == 0)
+            {
+                indiceGiocatoreCorrente = 1;
+            }
+        }
+
+        private void FineG2_Click(object sender, EventArgs e)
+        {
+            if (indiceGiocatoreCorrente == 1)
+            {
+                indiceGiocatoreCorrente = 0;
+            }
+        }
+        private void AggiornaInterfacciaGiocatore(int indiceGiocatore)
+        {
+            ManoG1.Visible = indiceGiocatore == 0;
+            GiocaG1.Visible = indiceGiocatore == 0;
+            PescaG1.Visible = indiceGiocatore == 0;
+            FineG1.Visible = indiceGiocatore == 0;
+
+            ManoG2.Visible = indiceGiocatore == 1;
+            GiocaG2.Visible = indiceGiocatore == 1;
+            PescaG2.Visible = indiceGiocatore == 1;
+            FineG2.Visible = indiceGiocatore == 1;
+        }
     }
 }
-
 
