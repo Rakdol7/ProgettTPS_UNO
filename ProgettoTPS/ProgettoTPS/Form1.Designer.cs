@@ -81,6 +81,7 @@
             GiocaG1.Text = "GIOCA";
             GiocaG1.UseVisualStyleBackColor = true;
             GiocaG1.Visible = false;
+            GiocaG1.Click += GiocaG1_Click;
             // 
             // PescaG1
             // 
@@ -91,6 +92,7 @@
             PescaG1.Text = "PESCA";
             PescaG1.UseVisualStyleBackColor = true;
             PescaG1.Visible = false;
+            PescaG1.Click += PescaG1_Click;
             // 
             // GiocaG2
             // 
@@ -101,6 +103,7 @@
             GiocaG2.Text = "GIOCA";
             GiocaG2.UseVisualStyleBackColor = true;
             GiocaG2.Visible = false;
+            GiocaG2.Click += GiocaG2_Click;
             // 
             // PescaG2
             // 
@@ -111,6 +114,7 @@
             PescaG2.Text = "PESCA";
             PescaG2.UseVisualStyleBackColor = true;
             PescaG2.Visible = false;
+            PescaG2.Click += PescaG2_Click;
             // 
             // label1
             // 

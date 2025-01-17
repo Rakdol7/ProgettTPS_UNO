@@ -1,3 +1,5 @@
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
+
 namespace ProgettoTPS
 {
     public partial class Form1 : Form
@@ -74,52 +76,7 @@ namespace ProgettoTPS
             }
         }
 
-        /*private void CreatePlayerHandsUI()
-        {
-            // Posizione iniziale per i bottoni delle mani
-            int startX = 20; // Margine sinistro
-            int startY = 50; // Margine superiore
-            int buttonWidth = 60;
-            int buttonHeight = 40;
-            int spacing = 10; // Spazio tra i bottoni
-
-            for (int i = 0; i < giocatori.Length; i++)
-            {
-                var player = giocatori[i];
-                int currentY = startY + (buttonHeight + spacing) * i; // Riga per ogni giocatore
-
-                for (int j = 0; j < player.Mano.Count; j++)
-                {
-                    var card = player.Mano[j];
-                    Button cardButton = new Button
-                    {
-                        Width = buttonWidth,
-                        Height = buttonHeight,
-                        Text = card.Numero.ToString(),
-                        BackColor = GetColorFromString(card.Colore),
-                        Location = new Point(startX + (buttonWidth + spacing) * j, currentY),
-                        Name = $"Player{i}_Card{j}" // Nome univoco per ogni bottone
-                    };
-
-                    // Aggiunta del bottone alla Form
-                    Controls.Add(cardButton);
-                }
-            }
-        }
-
-        private Color GetColorFromString(string colorName)
-        {
-            return colorName switch
-            {
-                "Rosso" => Color.Red,
-                "Blu" => Color.Blue,
-                "Verde" => Color.Green,
-                "Giallo" => Color.Yellow,
-                _ => Color.Gray, // Default in caso di errore
-            };
-        }*/
-
-        //--------------------------------------------------------------------------------------------------------
+        //--------------------------------------------------------------------------------------------------------------
 
         private void IniziaGioco_Click(object sender, EventArgs e)
         {
@@ -139,6 +96,7 @@ namespace ProgettoTPS
             label1.Visible = true;
             label2.Visible = true;
             CartaTav.Visible = true;
+
             mazzo.Mescola();
             pilascarti.Clear();
 
@@ -159,8 +117,89 @@ namespace ProgettoTPS
                 giocatoreThreads[i].Start();
             }
 
-            //CreatePlayerHandsUI();
+            AggiornaPrimaMano();
+
         }
+        private void AggiornaPrimaMano()
+        {
+            ManoG1.Items.Clear();
+            foreach (var carta in giocatori[0].Mano.ToList())
+            {
+                ManoG1.Items.Add($"{carta.Colore} {carta.Numero}");
+            }
+
+            ManoG2.Items.Clear();
+            foreach (var carta in giocatori[1].Mano.ToList())
+            {
+                ManoG2.Items.Add($"{carta.Colore} {carta.Numero}");
+            }
+            //label2.Text = Convert.ToString(giocatori[1].Mano.Count);
+        }
+
+        private void GiocaG1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PescaG1_Click(object sender, EventArgs e)
+        {
+            /*var nuovaCarta = mazzo.Pesca(); // Pesca una carta dal mazzo
+
+            if (nuovaCarta != null) // Verifica che ci siano carte nel mazzo
+            {
+                giocatori[0].Mano.Add(nuovaCarta); // Aggiunge la carta pescata alla mano del giocatore
+
+                // Aggiorna graficamente la mano del giocatore 1
+                AggiornaManoGiocatore(0, ManoG1);
+            }
+            else
+            {
+                MessageBox.Show("Il mazzo è vuoto, non puoi pescare altre carte!", "Mazzo Vuoto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            label2.Text= Convert.ToString(giocatori[1].Mano.Count);*/
+
+            Carta c = mazzo.Pesca();
+            ManoG1.Items.Add($"{c.Colore} {c.Numero}");
+            giocatori[0].PescaCarta(c);
+
+        }
+
+        private void GiocaG2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PescaG2_Click(object sender, EventArgs e)
+        {
+            /*var nuovaCarta = mazzo.Pesca(); // Pesca una carta dal mazzo
+
+            if (nuovaCarta != null) // Verifica che ci siano carte nel mazzo
+            {
+                giocatori[1].Mano.Add(nuovaCarta); // Aggiunge la carta pescata alla mano del giocatore
+
+                // Aggiorna graficamente la mano del giocatore 1
+                AggiornaManoGiocatore(1, ManoG2);
+            }
+            else
+            {
+                MessageBox.Show("Il mazzo è vuoto, non puoi pescare altre carte!", "Mazzo Vuoto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            label2.Text = Convert.ToString(giocatori[1].Mano.Count);*/
+
+            Carta c = mazzo.Pesca();
+            ManoG2.Items.Add($"{c.Colore} {c.Numero}");
+            giocatori[1].PescaCarta(c);
+        }
+        
+        /*private void AggiornaManoGiocatore(int indexGiocatore, ListBox listBoxMano)
+        {
+            listBoxMano.Items.Clear(); // Svuota la ListBox
+            foreach (var carta in giocatori[indexGiocatore].Mano)
+            {
+                listBoxMano.Items.Add($"{carta.Colore} {carta.Numero}"); // Aggiunge le carte alla ListBox
+            }
+        }*/
+
     }
 }
 

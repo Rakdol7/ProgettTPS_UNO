@@ -29,10 +29,21 @@ namespace ProgettoTPS
 
         public void Pesca(Mazzo mazzo)
         {
-            var carta = mazzo.Pesca();
-            if (carta != null) mano.Add(carta);
+            var carta = mazzo.Pesca(); // Pesca una carta dal mazzo
+            if (carta != null)
+            {
+                Mano.Add(carta); // Aggiunge la carta alla mano
+            }
         }
 
+        public void PescaCarta(Carta carta)
+        {
+            if (carta != null)
+            {
+                Mano.Add(carta); // Aggiunge la carta alla mano
+            }
+        }
+        
         public Carta ScegliCarta(Carta cartaCorrente)
         {
             return mano.FirstOrDefault(c => c.IsGiocabile(cartaCorrente));

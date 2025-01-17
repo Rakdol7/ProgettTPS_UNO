@@ -8,7 +8,7 @@ namespace ProgettoTPS
 {
     public class Tavolo
     {
-        public Carta CartaCorrente { get; private set; }
+        public Carta CartaCorrente { get; set; }
 
         public void SetPrimaCarta(Carta carta)
         {
