@@ -3,12 +3,12 @@ namespace ProgettoTPS
     public partial class Form1 : Form
     {
         private Mazzo mazzo;
-        private Pilascarti pilascarti;
-        private Player[] players;
-        private Table table;
-        private int currentPlayerIndex;
-        private Thread[] playerThreads;
-        private bool gameRunning;
+        private PilaScarti pilascarti;
+        private Giocatore[] giocatori;
+        private Tavolo tavolo;
+        private int indiceGiocatoreCorrente;
+        private Thread[] giocatoreThreads;
+        private bool giocoInCorso;
 
         public Form1()
         {
@@ -23,214 +23,145 @@ namespace ProgettoTPS
 
         private void InitializeGame()
         {
-            // Initialize components
             mazzo = new Mazzo();
-            pilascarti = new Pilascarti();
-            table = new Table();
-            players = new Player[4];
-            playerThreads = new Thread[players.Length];
+            pilascarti = new PilaScarti();
+            tavolo = new Tavolo();
+            giocatori = new Giocatore[2];
+            giocatoreThreads = new Thread[giocatori.Length];
 
-            for (int i = 0; i < players.Length; i++)
+            for (int i = 0; i < giocatori.Length; i++)
             {
-                players[i] = new Player($"Player {i + 1}");
-            }
-
-            StartNewRound();
-        }
-
-        private void StartNewRound()
-        {
-            mazzo.Shuffle();
-            pilascarti.Clear();
-
-            foreach (var player in players)
-            {
-                player.DrawInitialHand(mazzo);
-            }
-
-            table.SetInitialCard(mazzo.DrawCard());
-
-            currentPlayerIndex = 0;
-            gameRunning = true;
-
-            for (int i = 0; i < players.Length; i++)
-            {
-                int playerIndex = i;
-                playerThreads[i] = new Thread(() => PlayerTurn(playerIndex));
-                playerThreads[i].Start();
+                giocatori[i] = new Giocatore($"Giocatore {i + 1}");
             }
         }
 
-        private void PlayerTurn(int playerIndex)
+        //--------------------------------------------------------------------------------------------------------------
+
+        private void Turno(int indiceGiocatore)
         {
-            while (gameRunning)
+            while (giocoInCorso)
             {
-                if (currentPlayerIndex == playerIndex)
+                if (indiceGiocatoreCorrente == indiceGiocatore)
                 {
-                    var player = players[playerIndex];
-                    var playableCard = player.ChooseCard(table.CurrentCard);
+                    var giocatore = giocatori[indiceGiocatore];
+                    var cartaGiocabile = giocatore.ScegliCarta(tavolo.CartaCorrente);
 
-                    if (playableCard != null)
+                    if (cartaGiocabile != null)
                     {
-                        table.UpdateCard(playableCard);
-                        pilascarti.AddCard(playableCard);
-                        player.PlayCard(playableCard);
+                        tavolo.AggiornaCarta(cartaGiocabile);
+                        pilascarti.AggiungiCarta(cartaGiocabile);
+                        giocatore.GiocaCarta(cartaGiocabile);
                     }
                     else
                     {
-                        player.DrawCard(mazzo);
+                        giocatore.Pesca(mazzo);
                     }
 
-                    CheckMazzo();
+                    ControllaMazzo();
 
-                    currentPlayerIndex = (currentPlayerIndex + 1) % players.Length;
+                    indiceGiocatoreCorrente = (indiceGiocatoreCorrente + 1) % giocatori.Length;
                 }
 
-                Thread.Sleep(100); // Prevent busy-wait
+                Thread.Sleep(100);
             }
         }
 
-        private void CheckMazzo()
+        private void ControllaMazzo()
         {
             if (mazzo.IsEmpty())
             {
-                mazzo.RefillFromPilascarti(pilascarti);
+                mazzo.RiempiDallaPilascarti(pilascarti);
             }
         }
-    }
 
-    public class Card
-    {
-        public int Number { get; }
-        public string Color { get; }
-
-        public Card(int number, string color)
+        /*private void CreatePlayerHandsUI()
         {
-            Number = number;
-            Color = color;
-        }
+            // Posizione iniziale per i bottoni delle mani
+            int startX = 20; // Margine sinistro
+            int startY = 50; // Margine superiore
+            int buttonWidth = 60;
+            int buttonHeight = 40;
+            int spacing = 10; // Spazio tra i bottoni
 
-        public bool IsPlayable(Card other)
-        {
-            return Number == other.Number || Color == other.Color;
-        }
-    }
-
-    public class Mazzo
-    {
-        private List<Card> cards;
-
-        public Mazzo()
-        {
-            cards = new List<Card>();
-            string[] colors = { "Red", "Blue", "Green", "Yellow" };
-
-            foreach (var color in colors)
+            for (int i = 0; i < giocatori.Length; i++)
             {
-                for (int i = 1; i <= 10; i++)
+                var player = giocatori[i];
+                int currentY = startY + (buttonHeight + spacing) * i; // Riga per ogni giocatore
+
+                for (int j = 0; j < player.Mano.Count; j++)
                 {
-                    cards.Add(new Card(i, color));
+                    var card = player.Mano[j];
+                    Button cardButton = new Button
+                    {
+                        Width = buttonWidth,
+                        Height = buttonHeight,
+                        Text = card.Numero.ToString(),
+                        BackColor = GetColorFromString(card.Colore),
+                        Location = new Point(startX + (buttonWidth + spacing) * j, currentY),
+                        Name = $"Player{i}_Card{j}" // Nome univoco per ogni bottone
+                    };
+
+                    // Aggiunta del bottone alla Form
+                    Controls.Add(cardButton);
                 }
             }
         }
 
-        public void Shuffle()
+        private Color GetColorFromString(string colorName)
         {
-            var rnd = new Random();
-            cards = cards.OrderBy(c => rnd.Next()).ToList();
-        }
-
-        public Card DrawCard()
-        {
-            if (cards.Count == 0) return null;
-
-            var card = cards[0];
-            cards.RemoveAt(0);
-            return card;
-        }
-
-        public bool IsEmpty() => cards.Count == 0;
-
-        public void RefillFromPilascarti(Pilascarti pilascarti)
-        {
-            cards = pilascarti.ClearAndReturnCards();
-            Shuffle();
-        }
-    }
-
-    public class Pilascarti
-    {
-        private List<Card> cards;
-
-        public Pilascarti()
-        {
-            cards = new List<Card>();
-        }
-
-        public void AddCard(Card card)
-        {
-            cards.Add(card);
-        }
-
-        public List<Card> ClearAndReturnCards()
-        {
-            var temp = new List<Card>(cards);
-            cards.Clear();
-            return temp;
-        }
-
-        public void Clear() => cards.Clear();
-    }
-
-    public class Player
-    {
-        public string Name { get; }
-        private List<Card> hand;
-
-        public Player(string name)
-        {
-            Name = name;
-            hand = new List<Card>();
-        }
-
-        public void DrawInitialHand(Mazzo mazzo)
-        {
-            for (int i = 0; i < 7; i++)
+            return colorName switch
             {
-                DrawCard(mazzo);
+                "Rosso" => Color.Red,
+                "Blu" => Color.Blue,
+                "Verde" => Color.Green,
+                "Giallo" => Color.Yellow,
+                _ => Color.Gray, // Default in caso di errore
+            };
+        }*/
+
+        //--------------------------------------------------------------------------------------------------------
+
+        private void IniziaGioco_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void IniziaGioco_Click_1(object sender, EventArgs e)
+        {
+            IniziaGioco.Visible = false;
+            ManoG1.Visible = true;
+            ManoG2.Visible = true;
+            GiocaG1.Visible = true;
+            GiocaG2.Visible = true;
+            PescaG1.Visible = true;
+            PescaG2.Visible = true;
+            FineG1.Visible = true;
+            FineG2.Visible = true;
+            label1.Visible = true;
+            label2.Visible = true;
+            CartaTav.Visible = true;
+            mazzo.Mescola();
+            pilascarti.Clear();
+
+            foreach (var giocatore in giocatori)
+            {
+                giocatore.PescaPrimaMano(mazzo);
             }
-        }
 
-        public void DrawCard(Mazzo mazzo)
-        {
-            var card = mazzo.DrawCard();
-            if (card != null) hand.Add(card);
-        }
+            tavolo.SetPrimaCarta(mazzo.Pesca());
 
-        public Card ChooseCard(Card currentCard)
-        {
-            return hand.FirstOrDefault(c => c.IsPlayable(currentCard));
-        }
+            indiceGiocatoreCorrente = 0;
+            giocoInCorso = true;
 
-        public void PlayCard(Card card)
-        {
-            hand.Remove(card);
-        }
-    }
+            for (int i = 0; i < giocatori.Length; i++)
+            {
+                int indiceGiocatore = i;
+                giocatoreThreads[i] = new Thread(() => Turno(indiceGiocatore));
+                giocatoreThreads[i].Start();
+            }
 
-    public class Table
-    {
-        public Card CurrentCard { get; private set; }
-
-        public void SetInitialCard(Card card)
-        {
-            CurrentCard = card;
-        }
-
-        public void UpdateCard(Card card)
-        {
-            CurrentCard = card;
+            //CreatePlayerHandsUI();
         }
     }
 }
+
 

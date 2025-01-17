@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\masnada.21197\\Desktop\\ProgettoTPS\\ProgettoTPS\\ProgettoTPS.csproj",
+      "projectUniqueName": "C:\\Users\\masnada.21197\\Desktop\\ProgettTPS_UNO\\ProgettoTPS\\ProgettoTPS\\ProgettoTPS.csproj",
       "projectName": "ProgettoTPS",
-      "projectPath": "C:\\Users\\masnada.21197\\Desktop\\ProgettoTPS\\ProgettoTPS\\ProgettoTPS.csproj",
+      "projectPath": "C:\\Users\\masnada.21197\\Desktop\\ProgettTPS_UNO\\ProgettoTPS\\ProgettoTPS\\ProgettoTPS.csproj",
       "packagesPath": "C:\\Users\\masnada.21197\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\masnada.21197\\Desktop\\ProgettoTPS\\ProgettoTPS\\obj\\",
+      "outputPath": "C:\\Users\\masnada.21197\\Desktop\\ProgettTPS_UNO\\ProgettoTPS\\ProgettoTPS\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -46,11 +46,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -75,7 +70,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }
