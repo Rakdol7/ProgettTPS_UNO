@@ -1,33 +1,33 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\PROPRIETARIO\\Desktop\\ProgettTPS_UNO\\ProgettoTPS\\",
+  "WorkspaceRootPath": "C:\\Users\\masnada.21197\\Downloads\\ProgettTPS_UNO\\ProgettoTPS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{979B3798-0AC3-4383-B881-A4B2660A14ED}|ProgettoTPS\\ProgettoTPS.csproj|c:\\users\\proprietario\\desktop\\progetttps_uno\\progettotps\\progettotps\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{979B3798-0AC3-4383-B881-A4B2660A14ED}|ProgettoTPS\\ProgettoTPS.csproj|c:\\users\\masnada.21197\\downloads\\progetttps_uno\\progettotps\\progettotps\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{979B3798-0AC3-4383-B881-A4B2660A14ED}|ProgettoTPS\\ProgettoTPS.csproj|solutionrelative:progettotps\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{979B3798-0AC3-4383-B881-A4B2660A14ED}|ProgettoTPS\\ProgettoTPS.csproj|C:\\Users\\PROPRIETARIO\\Desktop\\ProgettTPS_UNO\\ProgettoTPS\\progettotps\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{979B3798-0AC3-4383-B881-A4B2660A14ED}|ProgettoTPS\\ProgettoTPS.csproj|C:\\Users\\masnada.21197\\Downloads\\ProgettTPS_UNO\\ProgettoTPS\\progettotps\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{979B3798-0AC3-4383-B881-A4B2660A14ED}|ProgettoTPS\\ProgettoTPS.csproj|solutionrelative:progettotps\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{979B3798-0AC3-4383-B881-A4B2660A14ED}|ProgettoTPS\\ProgettoTPS.csproj|c:\\users\\proprietario\\desktop\\progetttps_uno\\progettotps\\progettotps\\giocatore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{979B3798-0AC3-4383-B881-A4B2660A14ED}|ProgettoTPS\\ProgettoTPS.csproj|c:\\users\\masnada.21197\\downloads\\progetttps_uno\\progettotps\\progettotps\\giocatore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{979B3798-0AC3-4383-B881-A4B2660A14ED}|ProgettoTPS\\ProgettoTPS.csproj|solutionrelative:progettotps\\giocatore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{979B3798-0AC3-4383-B881-A4B2660A14ED}|ProgettoTPS\\ProgettoTPS.csproj|c:\\users\\proprietario\\desktop\\progetttps_uno\\progettotps\\progettotps\\carta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{979B3798-0AC3-4383-B881-A4B2660A14ED}|ProgettoTPS\\ProgettoTPS.csproj|c:\\users\\masnada.21197\\downloads\\progetttps_uno\\progettotps\\progettotps\\carta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{979B3798-0AC3-4383-B881-A4B2660A14ED}|ProgettoTPS\\ProgettoTPS.csproj|solutionrelative:progettotps\\carta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{979B3798-0AC3-4383-B881-A4B2660A14ED}|ProgettoTPS\\ProgettoTPS.csproj|c:\\users\\proprietario\\desktop\\progetttps_uno\\progettotps\\progettotps\\mazzo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{979B3798-0AC3-4383-B881-A4B2660A14ED}|ProgettoTPS\\ProgettoTPS.csproj|c:\\users\\masnada.21197\\downloads\\progetttps_uno\\progettotps\\progettotps\\mazzo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{979B3798-0AC3-4383-B881-A4B2660A14ED}|ProgettoTPS\\ProgettoTPS.csproj|solutionrelative:progettotps\\mazzo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{979B3798-0AC3-4383-B881-A4B2660A14ED}|ProgettoTPS\\ProgettoTPS.csproj|c:\\users\\proprietario\\desktop\\progetttps_uno\\progettotps\\progettotps\\pilascarti.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{979B3798-0AC3-4383-B881-A4B2660A14ED}|ProgettoTPS\\ProgettoTPS.csproj|c:\\users\\masnada.21197\\downloads\\progetttps_uno\\progettotps\\progettotps\\pilascarti.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{979B3798-0AC3-4383-B881-A4B2660A14ED}|ProgettoTPS\\ProgettoTPS.csproj|solutionrelative:progettotps\\pilascarti.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{979B3798-0AC3-4383-B881-A4B2660A14ED}|ProgettoTPS\\ProgettoTPS.csproj|c:\\users\\proprietario\\desktop\\progetttps_uno\\progettotps\\progettotps\\tavolo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{979B3798-0AC3-4383-B881-A4B2660A14ED}|ProgettoTPS\\ProgettoTPS.csproj|c:\\users\\masnada.21197\\downloads\\progetttps_uno\\progettotps\\progettotps\\tavolo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{979B3798-0AC3-4383-B881-A4B2660A14ED}|ProgettoTPS\\ProgettoTPS.csproj|solutionrelative:progettotps\\tavolo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -44,76 +44,71 @@
               "$type": "Document",
               "DocumentIndex": 6,
               "Title": "Tavolo.cs",
-              "DocumentMoniker": "C:\\Users\\PROPRIETARIO\\Desktop\\ProgettTPS_UNO\\ProgettoTPS\\ProgettoTPS\\Tavolo.cs",
+              "DocumentMoniker": "C:\\Users\\masnada.21197\\Downloads\\ProgettTPS_UNO\\ProgettoTPS\\ProgettoTPS\\Tavolo.cs",
               "RelativeDocumentMoniker": "ProgettoTPS\\Tavolo.cs",
-              "ToolTip": "C:\\Users\\PROPRIETARIO\\Desktop\\ProgettTPS_UNO\\ProgettoTPS\\ProgettoTPS\\Tavolo.cs",
+              "ToolTip": "C:\\Users\\masnada.21197\\Downloads\\ProgettTPS_UNO\\ProgettoTPS\\ProgettoTPS\\Tavolo.cs",
               "RelativeToolTip": "ProgettoTPS\\Tavolo.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-17T21:23:55.083Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-17T21:23:55.083Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
               "Title": "PilaScarti.cs",
-              "DocumentMoniker": "C:\\Users\\PROPRIETARIO\\Desktop\\ProgettTPS_UNO\\ProgettoTPS\\ProgettoTPS\\PilaScarti.cs",
+              "DocumentMoniker": "C:\\Users\\masnada.21197\\Downloads\\ProgettTPS_UNO\\ProgettoTPS\\ProgettoTPS\\PilaScarti.cs",
               "RelativeDocumentMoniker": "ProgettoTPS\\PilaScarti.cs",
-              "ToolTip": "C:\\Users\\PROPRIETARIO\\Desktop\\ProgettTPS_UNO\\ProgettoTPS\\ProgettoTPS\\PilaScarti.cs",
+              "ToolTip": "C:\\Users\\masnada.21197\\Downloads\\ProgettTPS_UNO\\ProgettoTPS\\ProgettoTPS\\PilaScarti.cs",
               "RelativeToolTip": "ProgettoTPS\\PilaScarti.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-17T15:14:47.385Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-17T15:14:47.385Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "Giocatore.cs",
-              "DocumentMoniker": "C:\\Users\\PROPRIETARIO\\Desktop\\ProgettTPS_UNO\\ProgettoTPS\\ProgettoTPS\\Giocatore.cs",
+              "DocumentMoniker": "C:\\Users\\masnada.21197\\Downloads\\ProgettTPS_UNO\\ProgettoTPS\\ProgettoTPS\\Giocatore.cs",
               "RelativeDocumentMoniker": "ProgettoTPS\\Giocatore.cs",
-              "ToolTip": "C:\\Users\\PROPRIETARIO\\Desktop\\ProgettTPS_UNO\\ProgettoTPS\\ProgettoTPS\\Giocatore.cs",
+              "ToolTip": "C:\\Users\\masnada.21197\\Downloads\\ProgettTPS_UNO\\ProgettoTPS\\ProgettoTPS\\Giocatore.cs",
               "RelativeToolTip": "ProgettoTPS\\Giocatore.cs",
               "ViewState": "AgIAAB0AAAAAAAAAAAAIwDcAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-17T15:14:47.436Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-17T15:14:47.436Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "Mazzo.cs",
-              "DocumentMoniker": "C:\\Users\\PROPRIETARIO\\Desktop\\ProgettTPS_UNO\\ProgettoTPS\\ProgettoTPS\\Mazzo.cs",
+              "DocumentMoniker": "C:\\Users\\masnada.21197\\Downloads\\ProgettTPS_UNO\\ProgettoTPS\\ProgettoTPS\\Mazzo.cs",
               "RelativeDocumentMoniker": "ProgettoTPS\\Mazzo.cs",
-              "ToolTip": "C:\\Users\\PROPRIETARIO\\Desktop\\ProgettTPS_UNO\\ProgettoTPS\\ProgettoTPS\\Mazzo.cs",
+              "ToolTip": "C:\\Users\\masnada.21197\\Downloads\\ProgettTPS_UNO\\ProgettoTPS\\ProgettoTPS\\Mazzo.cs",
               "RelativeToolTip": "ProgettoTPS\\Mazzo.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAAoAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-17T15:14:47.441Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-17T15:14:47.441Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "Carta.cs",
-              "DocumentMoniker": "C:\\Users\\PROPRIETARIO\\Desktop\\ProgettTPS_UNO\\ProgettoTPS\\ProgettoTPS\\Carta.cs",
+              "DocumentMoniker": "C:\\Users\\masnada.21197\\Downloads\\ProgettTPS_UNO\\ProgettoTPS\\ProgettoTPS\\Carta.cs",
               "RelativeDocumentMoniker": "ProgettoTPS\\Carta.cs",
-              "ToolTip": "C:\\Users\\PROPRIETARIO\\Desktop\\ProgettTPS_UNO\\ProgettoTPS\\ProgettoTPS\\Carta.cs",
+              "ToolTip": "C:\\Users\\masnada.21197\\Downloads\\ProgettTPS_UNO\\ProgettoTPS\\ProgettoTPS\\Carta.cs",
               "RelativeToolTip": "ProgettoTPS\\Carta.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-17T15:14:47.444Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-17T15:14:47.444Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\PROPRIETARIO\\Desktop\\ProgettTPS_UNO\\ProgettoTPS\\ProgettoTPS\\Form1.cs",
+              "DocumentMoniker": "C:\\Users\\masnada.21197\\Downloads\\ProgettTPS_UNO\\ProgettoTPS\\ProgettoTPS\\Form1.cs",
               "RelativeDocumentMoniker": "ProgettoTPS\\Form1.cs",
-              "ToolTip": "C:\\Users\\PROPRIETARIO\\Desktop\\ProgettTPS_UNO\\ProgettoTPS\\ProgettoTPS\\Form1.cs",
+              "ToolTip": "C:\\Users\\masnada.21197\\Downloads\\ProgettTPS_UNO\\ProgettoTPS\\ProgettoTPS\\Form1.cs",
               "RelativeToolTip": "ProgettoTPS\\Form1.cs",
-              "ViewState": "AgIAAKcAAAAAAAAAAAAswIUAAAAMAAAAAAAAAA==",
+              "ViewState": "AQIAANAAAAAAAAAAAAAUwN4AAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-17T15:14:47.446Z",
               "EditorCaption": ""
@@ -122,9 +117,9 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Form1.cs [Progettazione]",
-              "DocumentMoniker": "C:\\Users\\PROPRIETARIO\\Desktop\\ProgettTPS_UNO\\ProgettoTPS\\ProgettoTPS\\Form1.cs",
+              "DocumentMoniker": "C:\\Users\\masnada.21197\\Downloads\\ProgettTPS_UNO\\ProgettoTPS\\ProgettoTPS\\Form1.cs",
               "RelativeDocumentMoniker": "ProgettoTPS\\Form1.cs",
-              "ToolTip": "C:\\Users\\PROPRIETARIO\\Desktop\\ProgettTPS_UNO\\ProgettoTPS\\ProgettoTPS\\Form1.cs [Progettazione]",
+              "ToolTip": "C:\\Users\\masnada.21197\\Downloads\\ProgettTPS_UNO\\ProgettoTPS\\ProgettoTPS\\Form1.cs [Progettazione]",
               "RelativeToolTip": "ProgettoTPS\\Form1.cs [Progettazione]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-17T15:14:48.437Z",

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ProgettoTPS")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+85d6f94fad2100671c05e54b43cd178f0c4457ac")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8bf3f7164309c1d63862090840cbbc4fffd8b7ea")]
 [assembly: System.Reflection.AssemblyProductAttribute("ProgettoTPS")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ProgettoTPS")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

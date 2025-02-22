@@ -104,7 +104,6 @@ namespace ProgettoTPS
             {
                 int indiceGiocatore = i;
                 giocatoreThreads[i] = new Thread(() => Turno(indiceGiocatore));
-                giocatoreThreads[i].IsBackground = true;
                 giocatoreThreads[i].Start();
             }
 
@@ -115,13 +114,13 @@ namespace ProgettoTPS
         private void AggiornaPrimaMano()
         {
             ManoG1.Items.Clear();
-            foreach (var carta in giocatori[0].Mano.ToList())
+            foreach (var carta in giocatori[0].Mano)
             {
                 ManoG1.Items.Add($"{carta.Colore} {carta.Numero}");
             }
 
             ManoG2.Items.Clear();
-            foreach (var carta in giocatori[1].Mano.ToList())
+            foreach (var carta in giocatori[1].Mano)
             {
                 ManoG2.Items.Add($"{carta.Colore} {carta.Numero}");
             }
@@ -218,17 +217,23 @@ namespace ProgettoTPS
 
         private void FineG1_Click(object sender, EventArgs e)
         {
-            if (indiceGiocatoreCorrente == 0)
+            if (PescaG1.Visible == false)
             {
-                indiceGiocatoreCorrente = 1;
+                if (indiceGiocatoreCorrente == 0)
+                {
+                    indiceGiocatoreCorrente = 1;
+                }
             }
         }
 
         private void FineG2_Click(object sender, EventArgs e)
         {
-            if (indiceGiocatoreCorrente == 1)
+            if (PescaG2.Visible == false)
             {
-                indiceGiocatoreCorrente = 0;
+                if (indiceGiocatoreCorrente == 1)
+                {
+                    indiceGiocatoreCorrente = 0;
+                }
             }
         }
         private void AggiornaInterfacciaGiocatore(int indiceGiocatore)
